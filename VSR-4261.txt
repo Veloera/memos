@@ -1,5 +1,5 @@
 Veloera                                                       Tethys Shinplex
-Request for Comments: 4261953 - TBD                              08 May, 2025
+Veloera Standard Reference: 4261                                 08 May, 2025
 Category: Standards Track                                       Specification
 
                      Git Commit Message Specification
