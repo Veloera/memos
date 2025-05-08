@@ -1,0 +1,190 @@
+Veloera                                                       Tethys Shinplex
+Request for Comments: 4261953 - TBD                              08 May, 2025
+Category: Standards Track                                       Specification
+
+                     Git Commit Message Specification
+
+Abstract
+
+This document specifies the required format and content for Git commit
+messages within Veloera. The purpose of thisbspecification is to ensure
+a clear, consistent, and informative commit history that facilitates 
+collaboration, troubleshooting, and automation.
+
+1.  Introduction
+
+   A well-structured and informative commit history is a critical
+   asset for any software project. It provides a traceable record of
+   changes, aids in debugging, and improves communication among team
+   members. This specification defines the rules for crafting effective
+   Git commit messages within this project.
+
+2.  Structure
+
+   Each commit message MUST adhere to the following structure:
+
+   Subject Line
+
+   [Optional Body]
+
+   [Optional Footer(s)]
+
+   Each section MUST be separated by a single blank line.
+
+3.  Subject Line
+
+   The subject line is a concise summary of the changes introduced by
+   the commit. It MUST follow these guidelines:
+
+   3.1.  Type
+
+      The subject line MUST begin with a type, written in lowercase.
+      Valid types are listed in Section 5.
+
+   3.2.  Optional Scope
+
+      An optional scope, enclosed in parentheses "()", MAY be included
+      after the type to provide additional context about the part of
+      the codebase affected by the changes (e.g., "feat(api)",
+      "fix(auth)"). The scope MUST also be in lowercase.
+
+   3.3.  Colon and Space
+
+      The type and optional scope MUST be followed by a colon and a
+      space (": ").
+
+   3.4.  Subject Description
+
+      The subject description MUST be a brief, imperative-mood statement
+      of the change.
+
+      3.4.1.  Imperative Mood
+
+         Use the imperative mood (e.g., "Add", "Fix", "Refactor") as
+         if giving an order.
+
+      3.4.2.  Capitalization
+
+         The first word of the subject description MUST be capitalized.
+
+      3.4.3.  Punctuation
+
+         The subject description MUST NOT end with a period (".").
+
+   3.5.  Length
+
+      The subject line SHOULD be kept to a maximum of 50 characters.
+      While exceeding this limit is permissible in exceptional
+      circumstances, maintaining brevity is strongly encouraged for
+      readability in various Git tools.
+
+4.  Body
+
+   The optional body provides a more detailed explanation of the changes.
+   It SHOULD be used when the subject line alone is insufficient to
+   convey the necessary information. For small, straightforward changes
+   where the subject line clearly and completely describes the commit,
+   the body MAY be omitted. When included, the body MUST adhere to the
+   following:
+
+   4.1.  Separation
+
+      The body MUST be separated from the subject by a blank line.
+
+   4.2.  Content
+
+      The body SHOULD explain the "why" and "what" of the change.
+      This includes:
+
+      o  Motivation for the change.
+
+      o  How the change addresses the issue or implements the feature.
+
+      o  Any potential side effects or considerations.
+
+      o  Avoid simply reiterating information already evident in the code.
+
+   4.3.  Line Length
+
+      Each line of the body SHOULD be wrapped at 72 characters for
+      optimal readability in various Git tools.
+
+5.  Footer(s)
+
+   The optional footer(s) provide additional information related to the
+   commit, such as references to issue trackers or notes on breaking
+   changes. The footer(s) MUST adhere to the following:
+
+   5.1.  Separation
+
+      The footer(s) MUST be separated from the body (or subject if no
+      body is present) by a blank line.
+
+   5.2.  Content
+
+      o  Issue References: References to issue tracking systems (e.g.,
+         Jira, GitHub Issues) SHOULD be included here. The format for
+         these references SHOULD follow team conventions (e.g., "Closes
+         #<issue-number>", "Fixes D2IQ-<JIRA #>").
+
+      o  Breaking Changes: If the commit introduces a breaking change,
+         it MUST be clearly indicated in the footer. This can be done
+         by including "BREAKING CHANGE: <description>" on a new line.
+         The description SHOULD explain the impact of the breaking change
+         and any necessary migration steps. Alternatively, a breaking
+         change can be indicated by adding a "!" after the type (e.g.,
+         "feat!: introduce new API").
+
+6.  Commit Types
+
+   The following types are the only valid types that MAY be used in the
+   subject line. The use of other types is strictly prohibited.
+
+   o  "feat": A new feature is introduced to the codebase.
+
+   o  "fix": A bug fix has occurred.
+
+   o  "docs": Updates or additions to documentation (e.g., README,
+      markdown files).
+
+   o  "style": Changes that do not affect the meaning of the code,
+      primarily related to code formatting (whitespace, semicolons,
+      etc.).
+
+   o  "refactor": A change to the codebase that neither fixes a bug nor
+      adds a feature, primarily focused on improving code structure or
+      readability.
+
+   o  "test": Additions or corrections to tests.
+
+   o  "chore": Routine maintenance tasks that do not modify src or test
+      files (e.g., updating dependencies, build process changes).
+
+   o  "perf": Code changes that improve performance.
+
+   o  "ci": Changes related to continuous integration (CI)
+      configuration files and scripts.
+
+   o  "build": Changes that affect the build system or external
+      dependencies (e.g., package managers).
+
+   o  "revert": Reverts a previous commit.
+
+7.  Enforcement
+
+   To ensure compliance with this specification, commit message linting
+   MAY be configured on the repository. This will prevent commits with
+   invalid message formats from being pushed. Contributors are
+   encouraged to utilize tools that assist with creating conventional
+   commits (e.g., Commitizen).
+
+8.  Review and Updates
+
+   This specification is subject to review and updates as the project
+   evolves. Suggestions for improvements or clarifications are welcome
+   and should be discussed with the team.
+
+148 Luhn St, NSW 2021, Australia
+
+   Tethys Shinplex
+   tethys@vt.edu.kg
